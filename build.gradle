@@ -22,3 +22,17 @@ processResources {
     inputs.property 'version', project.version
     filesMatching('fabric.mod.json') { expand version: project.version }
 }
+
+tasks.named('test', Test) {
+    failOnNoDiscoveredTests = false
+}
+
+tasks.register('skyQolStandaloneTests', Exec) {
+    group = 'verification'
+    workingDir = projectDir
+    commandLine 'bash', 'run-tests.sh'
+}
+
+tasks.named('check') {
+    dependsOn(tasks.named('skyQolStandaloneTests'))
+}
