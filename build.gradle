@@ -12,7 +12,12 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 tasks.withType(JavaCompile).configureEach { options.release = 25 }
-java { toolchain { languageVersion = JavaLanguageVersion.of(25) } withSourcesJar() }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+    withSourcesJar()
+}
 processResources {
     inputs.property 'version', project.version
     filesMatching('fabric.mod.json') { expand version: project.version }
