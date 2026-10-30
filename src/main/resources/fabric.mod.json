@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "skyqol",
+  "version": "${version}",
+  "name": "SkyQoL",
+  "description": "Client-side Hypixel SkyBlock QoL modular UI foundation",
+  "authors": ["SkyQoL project"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {"client": ["de.skyqol.SkyQolClient"]},
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": ">=0.157.0+26.2"
+  }
+}
